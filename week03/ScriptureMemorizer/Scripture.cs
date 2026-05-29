@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class Scripture
 {
     private Reference _reference;
-    private List<Word> _words; = new List<Word>();
+    private List<Word> _words = new List<Word>();
 
     public Scripture(Reference reference, string text)
     {
@@ -17,7 +17,7 @@ public class Scripture
         }
     }
 
-    public void HideRandomWord(int numberToHide)
+    public void HideRandomWords(int numberToHide)
     {
         Random random = new Random();
         
@@ -35,6 +35,16 @@ public class Scripture
         }
     }
 
+    public string GetDisplayText()
+    {
+        string displayText = _reference.GetDisplayText() + " ";
+        foreach (Word word in _words)
+        {
+            displayText += word.GetDisplayText() + " ";
+        }
+        return displayText;
+    }
+
     public bool IsCompletelyHidden()
     {
         foreach (Word word in _words)
@@ -46,3 +56,4 @@ public class Scripture
         }
         return true;
     }
+}

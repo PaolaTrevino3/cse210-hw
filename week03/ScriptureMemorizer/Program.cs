@@ -1,17 +1,18 @@
 
-using System.ComponentModel;
+using System;
+using System.Collections.Generic;
 
 
 /// Creativity:
 /// -the program randomly hides three words at a time.
 /// -added multiple scripture options
 /// -a random scripture is selected each time the program runs.
-/// -add a motivational ending message when all the words are hidden. Diarrhea
+/// -add a motivational ending message when all the words are hidden.
 class Program
 {
     static void Main(string[] args)
     {
-       List<Scripture> scriptures = new List<Scripture>()
+       List<Scripture> scriptures = new List<Scripture>();
        
        Reference reference1 = new Reference("Proverbs", 3, 5, 6);
        Scripture scripture1 = new Scripture(reference1, "Trust in the Lord with all thine heart and lean not unto thine own understanding.");
@@ -33,7 +34,7 @@ class Program
        {
            Console.Clear();
            Console.WriteLine(selectedScripture.GetDisplayText());
-           Console.WriteLine()
+           Console.WriteLine();
            Console.Write("Press Enter to hide words or type 'quit' to finish: ");
            
            string input = Console.ReadLine();
